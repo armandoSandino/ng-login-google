@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/ng12-social-auth",
     "ignore": [
       "firebase.json",
       "**/.*",

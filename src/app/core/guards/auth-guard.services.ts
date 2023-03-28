@@ -6,14 +6,11 @@ import { AuthService } from '../services/auth/auth.service';
 @Injectable({ providedIn: 'root' })  
 export class AuthGuardService implements CanActivate  {
   constructor(public auth: AuthService, public router: Router) {}
- 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (!this.auth.isAuthenticated()) {
-    
       this.router.navigate(['/login'], { queryParams: { redirect: state.url }, replaceUrl: true });
-      return false;
-    
+      return false;    
     }
     return true;
   }
